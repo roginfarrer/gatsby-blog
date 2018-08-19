@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'FF Meta VF';
+  src: url('../fonts/MetaVariableDemo-Set.woff2') format('woff2-variations'),
+    url('../fonts/MetaVariableDemo-Set.woff2') format('woff2'),
+    url('../fonts/MetaVariableDemo-Set.ttf') format('ttf');
+  font-style: normal italic;
+  font-weight: 100 900;
+}

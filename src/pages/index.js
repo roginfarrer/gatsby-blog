@@ -1,32 +1,67 @@
 import React from 'react';
-// import BlogIndex from '../components/blog-index';
-
 import Layout from '../components/layout';
-
 import { Link, graphql } from 'gatsby';
+import styled from 'styled-components';
+import { Provider as SiteHeaderProvider } from '../components/site-header';
+
+const BlogIndex = styled.section`
+  margin: 3em auto 0;
+  max-width: 38em;
+`;
+
+const Post = styled.section`
+  & + & {
+    margin-top: 2em;
+  }
+`;
+
+const PostHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const PostTitle = styled.h2`
+  color: ${({ theme }) => theme.color.primary};
+  font-size: ${({ theme }) => theme.fontSize.h3};
+  margin: 0;
+`;
+
+const PostTitleLink = styled(Link)`
+  text-decoration: none;
+`;
+
+const PostDate = styled.p`
+  font-size: ${({ theme }) => theme.fontSize.small}
+  margin: 0;
+`;
 
 export default function Index({ data = {} }) {
   const { edges: posts } = data.allMarkdownRemark;
   return (
-    <Layout>
-      <div className="blog-posts">
-        {posts
-          .filter(post => post.node.frontmatter.title.length > 0)
-          .map(({ node: post }) => {
-            return (
-              <div className="blog-post-preview" key={post.id}>
-                <h1>
-                  <Link to={post.frontmatter.path}>
-                    {post.frontmatter.title}
-                  </Link>
-                </h1>
-                <h2>{post.frontmatter.date}</h2>
-                <p>{post.excerpt}</p>
-              </div>
-            );
-          })}
-      </div>
-    </Layout>
+    <SiteHeaderProvider value={{ isLarge: true }}>
+      <Layout>
+        <BlogIndex>
+          {posts
+            .filter(post => post.node.frontmatter.title.length > 0)
+            .map(({ node: post }) => {
+              return (
+                <Post key={post.id}>
+                  <PostHeader>
+                    <PostTitle>
+                      <PostTitleLink to={post.frontmatter.path}>
+                        {post.frontmatter.title}
+                      </PostTitleLink>
+                    </PostTitle>
+                    <PostDate>{post.frontmatter.date}</PostDate>
+                  </PostHeader>
+                  <p>{post.frontmatter.excerpt || post.excerpt}</p>
+                </Post>
+              );
+            })}
+        </BlogIndex>
+      </Layout>
+    </SiteHeaderProvider>
   );
 }
 

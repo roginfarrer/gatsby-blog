@@ -9,6 +9,13 @@ const Article = styled.article`
   margin: 0 auto;
 `;
 
+const ArticleTitle = styled.h2`
+  font-size: ${({ theme }) => theme.fontSize.h1};
+  margin: 1.414em 0 0.5em;
+`;
+
+const ArticleDate = styled.span;
+
 // import '../css/blog-post.css';
 
 const Template = ({ data }) => {
@@ -16,7 +23,7 @@ const Template = ({ data }) => {
   return (
     <Layout>
       <Article>
-        <h1>{post.frontmatter.title}</h1>
+        <ArticleTitle>{post.frontmatter.title}</ArticleTitle>
         <MarkdownWrapper dangerouslySetInnerHTML={{ __html: post.html }} />
       </Article>
     </Layout>

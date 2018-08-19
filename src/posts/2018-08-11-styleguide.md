@@ -1,7 +1,7 @@
 ---
-path: "/styleguide"
-date: "2017-07-12T17:12:33.962Z"
-title: "Style Guide"
+path: '/styleguide'
+date: '2017-07-12T17:12:33.962Z'
+title: 'Style Guide'
 ---
 
 This page exists to demonstrate the visual styles of the various elements that comprise the design of this site. I got the idea and some of the text from [Dan Eden](http://daneden.com/styleguide). This is not only for my own benefit, as the designer and maintainer, but also to satisfy the curiosity of those interested in such things (like myself).
@@ -12,17 +12,17 @@ This page exists to demonstrate the visual styles of the various elements that c
 
 At the time of writing (November 26, 2014), body copy is set in Ratio. Headlines are set in the same.
 
-## Heading Level Two
+### Biggest heading level
 
 Second level headings are used to split text into sections. First level headings are only used once per page, in the page or post title. Hyperlinks are [underlined](/) and darkened when hovered.
 
-For emphasis, **bold text** is very useful to make words pop. For important, but less urgent points, *italicized text* becomes handy.
+For emphasis, **bold text** is very useful to make words pop. For important, but less urgent points, _italicized text_ becomes handy.
 
 - Bulleted lists look like this.
 - Sometimes my lists are long.
 - This is not one of those lists.
 
-### Heading Level Three
+#### Second biggest heading level
 
 Third level headings are most often used to denote names rather than sections, so have a lower visual priority. Headings should avoid containing or being themselves hyperlinks, but when this rule is broken, heading hyperlinks do not differ in style from the heading itself.
 

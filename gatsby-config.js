@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Rogin Farrer'
+    title: 'Superb Meteors',
+    author: 'Rogin Farrer'
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -9,7 +10,8 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [] // just in case those previously mentioned remark plugins sound cool :)
+        plugins: [], // just in case those previously mentioned remark plugins sound cool :)
+        excerpt_separator: `<!-- end -->`
       }
     },
     // {
