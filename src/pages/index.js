@@ -3,6 +3,7 @@ import Layout from '../components/layout';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Provider as SiteHeaderProvider } from '../components/site-header';
+import { breakpoints } from '../globalStyle';
 
 const BlogIndex = styled.section`
   margin: 3em auto 0;
@@ -16,9 +17,11 @@ const Post = styled.section`
 `;
 
 const PostHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  ${({ theme }) => theme.media.sm`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  `};
 `;
 
 const PostTitle = styled.h2`

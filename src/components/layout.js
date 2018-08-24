@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, Link } from 'gatsby';
 
 import Header from './site-header';
 import '../assets/styles/style.css';
 import { globalStyle, theme } from '../globalStyle';
 import styled, { ThemeProvider } from 'styled-components';
 
-const PageWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+const PageContainer = styled.div`
+  padding: 0 15px;
+  /* height: 100vh; */
 `;
 
 const Content = styled.main`
@@ -24,7 +23,7 @@ const Footer = styled.footer`
   border-top: 1px solid #666;
   margin: 3em auto 0;
   padding: 0.5em;
-  width: 38em;
+  max-width: 38em;
 `;
 
 const TwitterLink = styled.a`
@@ -63,24 +62,26 @@ const Container = ({ children, data, theme }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header
-          siteTitle={data.site.siteMetadata.title}
-          author={data.site.siteMetadata.author}
-        />
-        <Content>{children}</Content>
-        <Footer>
-          <FooterText>
-            You can find me on{' '}
-            <TwitterLink href="https://twitter.com/roginfarrer">
-              Twitter
-            </TwitterLink>{' '}
-            and{' '}
-            <GithubLink href="https://github.com/roginfarrer">
-              Github
-            </GithubLink>
-            .
-          </FooterText>
-        </Footer>
+        <PageContainer>
+          <Header
+            siteTitle={data.site.siteMetadata.title}
+            author={data.site.siteMetadata.author}
+          />
+          <Content>{children}</Content>
+          <Footer>
+            <FooterText>
+              You can find me on{' '}
+              <TwitterLink href="https://twitter.com/roginfarrer">
+                Twitter
+              </TwitterLink>{' '}
+              and{' '}
+              <GithubLink href="https://github.com/roginfarrer">
+                Github
+              </GithubLink>
+              . <Link to="/about">Want more?</Link>
+            </FooterText>
+          </Footer>
+        </PageContainer>
       </>
     )}
   />

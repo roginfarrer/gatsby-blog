@@ -14,17 +14,6 @@ module.exports = {
         excerpt_separator: `<!-- end -->`
       }
     },
-    // {
-    //   resolve: `gatsby-mdx`,
-    // options: {
-    //   decks: [],
-    // },
-    // options: {
-    //   defaultLayouts: {
-    //     posts: require.resolve('./src/components/posts-layout.js'),
-    //   },
-    // },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -40,15 +29,34 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-plugin-favicon`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png' // This path is relative to the root of the site.
+        logo: './src/images/bitmoji2.png',
+        // WebApp Manifest Configuration
+        appName: 'Superb Meteors',
+        appDescription: null,
+        developerName: 'Rogin Farrer',
+        developerURL: null,
+        dir: 'auto',
+        lang: 'en-US',
+        background: '#fff',
+        theme_color: '#007acc',
+        display: 'standalone',
+        orientation: 'any',
+        start_url: '/?homescreen=1',
+        version: '1.0',
+        icons: {
+          android: false,
+          appleIcon: false,
+          appleStartup: false,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          opengraph: false,
+          twitter: false,
+          yandex: false,
+          windows: false
+        }
       }
     },
     'gatsby-plugin-offline'
