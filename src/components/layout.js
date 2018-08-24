@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import {StaticQuery, graphql, Link} from 'gatsby';
 
 import Header from './site-header';
 import '../assets/styles/style.css';
-import { globalStyle, theme } from '../globalStyle';
-import styled, { ThemeProvider } from 'styled-components';
+import {globalStyle, theme} from '../globalStyle';
+import styled, {ThemeProvider} from 'styled-components';
 
 const PageContainer = styled.div`
   padding: 0 15px;
@@ -14,7 +14,7 @@ const PageContainer = styled.div`
 `;
 
 const Content = styled.main`
-  color: ${({ theme }) => theme.color.base};
+  color: ${({theme}) => theme.color.base};
   line-height: 1.5;
   margin: 0 auto;
 `;
@@ -38,7 +38,7 @@ const FooterText = styled.span`
   font-size: 0.85rem;
 `;
 
-const Container = ({ children, data, theme }) => (
+const Container = ({children, data, theme}) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -55,9 +55,9 @@ const Container = ({ children, data, theme }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-            { name: 'theme-color', content: theme.color.primary }
+            {name: 'description', content: 'Sample'},
+            {name: 'keywords', content: 'sample, something'},
+            {name: 'theme-color', content: theme.color.primary}
           ]}
         >
           <html lang="en" />

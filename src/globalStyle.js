@@ -1,4 +1,4 @@
-import { injectGlobal, css } from 'styled-components';
+import {injectGlobal, css} from 'styled-components';
 
 export const globalStyle = theme => injectGlobal`
   /* @import url('https://fonts.googleapis.com/css?family=Zilla+Slab:900'); */

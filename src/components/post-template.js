@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import {graphql} from 'gatsby';
 import Layout from './layout';
 import MarkdownWrapper from './markdown-wrapper';
 import styled from 'styled-components';
@@ -10,7 +10,7 @@ const Article = styled.article`
 `;
 
 const ArticleTitle = styled.h2`
-  font-size: ${({ theme }) => theme.fontSize.h1};
+  font-size: ${({theme}) => theme.fontSize.h1};
   margin: 1.414em 0 0.5em;
 `;
 
@@ -18,13 +18,13 @@ const ArticleDate = styled.span;
 
 // import '../css/blog-post.css';
 
-const Template = ({ data }) => {
-  const { markdownRemark: post } = data;
+const Template = ({data}) => {
+  const {markdownRemark: post} = data;
   return (
     <Layout>
       <Article>
         <ArticleTitle>{post.frontmatter.title}</ArticleTitle>
-        <MarkdownWrapper dangerouslySetInnerHTML={{ __html: post.html }} />
+        <MarkdownWrapper dangerouslySetInnerHTML={{__html: post.html}} />
       </Article>
     </Layout>
   );
@@ -32,7 +32,7 @@ const Template = ({ data }) => {
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(frontmatter: {path: {eq: $path}}) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")

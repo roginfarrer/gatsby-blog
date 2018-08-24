@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import {Link} from 'gatsby';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
@@ -9,32 +9,32 @@ const HeaderContainer = styled.header`
 
 const Title = styled.h1`
   margin: 0;
-  font-family: ${({ theme }) => `"Zilla Slab", ${theme.serifFallback}`};
-  font-size: ${({ theme, isLarge }) => (isLarge ? theme.fontSize.h1 : null)};
+  font-family: ${({theme}) => `"Zilla Slab", ${theme.serifFallback}`};
+  font-size: ${({theme, isLarge}) => (isLarge ? theme.fontSize.h1 : null)};
   flex: 1;
 `;
 
 const TitleLink = styled(Link)`
-  color: ${({ theme }) => theme.color.base};
+  color: ${({theme}) => theme.color.base};
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: ${({ theme }) => theme.color.primary};
+    color: ${({theme}) => theme.color.primary};
   }
 `;
 
 const TitleByline = styled.div`
-  font-family: ${({ theme }) => theme.fontFamily};
+  font-family: ${({theme}) => theme.fontFamily};
   font-style: italic;
   font-weight: normal;
   font-size: 1rem;
 `;
 
-const HeaderContext = React.createContext({ isLarge: false });
-const { Consumer } = HeaderContext;
+const HeaderContext = React.createContext({isLarge: false});
+const {Consumer} = HeaderContext;
 
-const StyledHeader = ({ siteTitle, author, ...props }) => (
+const StyledHeader = ({siteTitle, author, ...props}) => (
   <Consumer>
     {value => (
       <HeaderContainer>
@@ -48,5 +48,5 @@ const StyledHeader = ({ siteTitle, author, ...props }) => (
   </Consumer>
 );
 
-export const { Provider } = HeaderContext;
+export const {Provider} = HeaderContext;
 export default StyledHeader;

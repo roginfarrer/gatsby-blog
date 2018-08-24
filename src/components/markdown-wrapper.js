@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 const MarkdownWrapper = styled.div`
   h3 {
-    font-size: ${({ theme }) => theme.fontSize.h3};
+    font-size: ${({theme}) => theme.fontSize.h3};
   }
   h4 {
-    font-size: ${({ theme }) => theme.fontSize.h4};
+    font-size: ${({theme}) => theme.fontSize.h4};
   }
   h3,
   h4 {
@@ -35,7 +35,7 @@ const MarkdownWrapper = styled.div`
     counter-reset: listCounter;
     li {
       &::before {
-        color: ${({ theme }) => theme.color.primary};
+        color: ${({theme}) => theme.color.primary};
         position: absolute;
       }
       counter-increment: listCounter;
@@ -62,7 +62,7 @@ const MarkdownWrapper = styled.div`
   }
 
   blockquote {
-    color: ${({ theme }) => theme.color.lightBase}
+    color: ${({theme}) => theme.color.lightBase}
     position: relative;
     margin: 2em 0;
     &::before {
