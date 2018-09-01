@@ -2,11 +2,18 @@ import {injectGlobal, css} from 'styled-components';
 
 export const globalStyle = theme => injectGlobal`
   /* @import url('https://fonts.googleapis.com/css?family=Zilla+Slab:900'); */
-  @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700|Zilla+Slab:700');
+  /* @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700|Zilla+Slab:700');
+  @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,700|');
+  @import url('https://fonts.googleapis.com/css?family=Karla:400|Fanwood+Text:400,400i,700');
+  @import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700|Karla:400,700');
+  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700|'); */
+  /* @import url('https://fonts.googleapis.com/css?family=Special+Elite|Vollkorn:400,400i,700'); */
+  @import url('https://fonts.googleapis.com/css?family=Catamaran:400,700|Vollkorn:700');
+
 
   html {
     font-family: ${theme.fontFamily};
-    font-size: 18px;
+    font-size: 16px;
   }
 
   body {
@@ -46,6 +53,9 @@ export const globalStyle = theme => injectGlobal`
       font-size: ${theme.fontSize.small}
     }
   }
+  h2, h3, h4 {
+    font-family: 'Vollkorn';
+  }
 `;
 
 const serifFallback = `"BlinkMacSystemFont", -apple-system, "Helvetica Neue",
@@ -66,7 +76,7 @@ export const theme = {
     primary: '#007acc'
   },
   serifFallback,
-  fontFamily: `"IBM Plex Sans", ${serifFallback}`,
+  fontFamily: `"Catamaran", ${serifFallback}`,
   fontSize: {
     small: '0.707rem',
     body: '1rem',

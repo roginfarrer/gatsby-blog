@@ -9,8 +9,11 @@ const HeaderContainer = styled.header`
 
 const Title = styled.h1`
   margin: 0;
-  font-family: ${({theme}) => `"Zilla Slab", ${theme.serifFallback}`};
-  font-size: ${({theme, isLarge}) => (isLarge ? theme.fontSize.h1 : null)};
+  text-transform: uppercase;
+  /* font-family: ${({theme}) => `"Special Elite", ${theme.serifFallback}`}; */
+  /* font-size: ${({theme, isLarge}) =>
+    isLarge ? theme.fontSize.h1 : null}; */
+  font-size: 1rem;
   flex: 1;
 `;
 
@@ -24,11 +27,11 @@ const TitleLink = styled(Link)`
   }
 `;
 
-const TitleByline = styled.div`
-  font-family: ${({theme}) => theme.fontFamily};
-  font-style: italic;
+const TitleByline = styled.span`
+  /* font-family: ${({theme}) => theme.fontFamily}; */
+  /* font-style: italic; */
   font-weight: normal;
-  font-size: 1rem;
+  /* font-size: 1rem; */
 `;
 
 const HeaderContext = React.createContext({isLarge: false});

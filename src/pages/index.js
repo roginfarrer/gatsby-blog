@@ -25,12 +25,12 @@ const PostHeader = styled.div`
 `;
 
 const PostTitle = styled.h2`
-  color: ${({theme}) => theme.color.primary};
   font-size: ${({theme}) => theme.fontSize.h3};
   margin: 0;
 `;
 
 const PostTitleLink = styled(Link)`
+  color: ${({theme}) => theme.color.base};
   text-decoration: none;
 `;
 
@@ -42,7 +42,7 @@ const PostDate = styled.p`
 export default function Index({data = {}}) {
   const {edges: posts} = data.allMarkdownRemark;
   return (
-    <SiteHeaderProvider value={{isLarge: true}}>
+    <SiteHeaderProvider value={{isLarge: false}}>
       <Layout>
         <BlogIndex>
           {posts
