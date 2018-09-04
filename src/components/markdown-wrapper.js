@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 const MarkdownWrapper = styled.div`
   h3 {
-    font-size: ${({theme}) => theme.fontSize.h3};
+    font-size: ${({theme}) => theme.fontSize.large};
   }
   h4 {
-    font-size: ${({theme}) => theme.fontSize.h4};
+    font-size: ${({theme}) => theme.fontSize.medium};
   }
   h3,
   h4 {

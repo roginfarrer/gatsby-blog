@@ -10,13 +10,11 @@ const Article = styled.article`
 `;
 
 const ArticleTitle = styled.h2`
-  font-size: ${({theme}) => theme.fontSize.h1};
+  font-size: ${({theme}) => theme.fontSize.roadsign};
   margin: 1.414em 0 0.5em;
 `;
 
 const ArticleDate = styled.span;
-
-// import '../css/blog-post.css';
 
 const Template = ({data}) => {
   const {markdownRemark: post} = data;
@@ -38,6 +36,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        excerpt
       }
     }
   }

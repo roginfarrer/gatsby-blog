@@ -10,9 +10,6 @@ const HeaderContainer = styled.header`
 const Title = styled.h1`
   margin: 0;
   text-transform: uppercase;
-  /* font-family: ${({theme}) => `"Special Elite", ${theme.serifFallback}`}; */
-  /* font-size: ${({theme, isLarge}) =>
-    isLarge ? theme.fontSize.h1 : null}; */
   font-size: 1rem;
   flex: 1;
 `;
@@ -23,15 +20,17 @@ const TitleLink = styled(Link)`
 
   &:hover,
   &:focus {
-    color: ${({theme}) => theme.color.primary};
+    .SiteHeader-title {
+      color: #d14054;
+    }
+    .SiteHeader-byline {
+      color: ${({theme}) => theme.color.primary};
+    }
   }
 `;
 
 const TitleByline = styled.span`
-  /* font-family: ${({theme}) => theme.fontFamily}; */
-  /* font-style: italic; */
   font-weight: normal;
-  /* font-size: 1rem; */
 `;
 
 const HeaderContext = React.createContext({isLarge: false});
@@ -43,7 +42,10 @@ const StyledHeader = ({siteTitle, author, ...props}) => (
       <HeaderContainer>
         <Title isLarge={value.isLarge}>
           <TitleLink to="/">
-            {siteTitle} <TitleByline>by {author}</TitleByline>
+            <span className="SiteHeader-title">{siteTitle}</span>
+            <TitleByline className="SiteHeader-byline">
+              &nbsp;by {author}
+            </TitleByline>
           </TitleLink>
         </Title>
       </HeaderContainer>

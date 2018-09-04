@@ -1,15 +1,7 @@
 import {injectGlobal, css} from 'styled-components';
 
 export const globalStyle = theme => injectGlobal`
-  /* @import url('https://fonts.googleapis.com/css?family=Zilla+Slab:900'); */
-  /* @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700|Zilla+Slab:700');
-  @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,700|');
-  @import url('https://fonts.googleapis.com/css?family=Karla:400|Fanwood+Text:400,400i,700');
-  @import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700|Karla:400,700');
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700|'); */
-  /* @import url('https://fonts.googleapis.com/css?family=Special+Elite|Vollkorn:400,400i,700'); */
   @import url('https://fonts.googleapis.com/css?family=Catamaran:400,700|Vollkorn:700');
-
 
   html {
     font-family: ${theme.fontFamily};
@@ -24,6 +16,10 @@ export const globalStyle = theme => injectGlobal`
 
   a {
     color: ${theme.color.primary};
+  }
+
+  p {
+    margin: 0;
   }
 
   a,
@@ -71,19 +67,20 @@ export const breakpoints = {
 
 export const theme = {
   color: {
-    base: '#333',
+    base: '#221924',
     lightBase: '#666',
-    primary: '#007acc'
+    primary: '#007acc',
+    red: '#d14054'
   },
   serifFallback,
   fontFamily: `"Catamaran", ${serifFallback}`,
   fontSize: {
-    small: '0.707rem',
-    body: '1rem',
-    h1: '3.157rem',
-    h2: '2.369rem',
-    h3: '1.777rem',
-    h4: '1.333rem'
+    small: '0.8125rem', // 13px
+    body: '1rem', // 16px
+    medium: '1.25rem', // 20px
+    large: '1.5rem', // 24px
+    xl: '2rem', // 32px
+    roadsign: '3rem' // 48
   },
   media: {
     ...Object.keys(breakpoints).reduce((acc, label) => {

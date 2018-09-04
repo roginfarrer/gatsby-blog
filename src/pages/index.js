@@ -25,7 +25,7 @@ const PostHeader = styled.div`
 `;
 
 const PostTitle = styled.h2`
-  font-size: ${({theme}) => theme.fontSize.h3};
+  font-size: ${({theme}) => theme.fontSize.xl};
   margin: 0;
 `;
 
@@ -58,7 +58,17 @@ export default function Index({data = {}}) {
                     </PostTitle>
                     <PostDate>{post.frontmatter.date}</PostDate>
                   </PostHeader>
-                  <p>{post.frontmatter.excerpt || post.excerpt}</p>
+                  <p>
+                    {post.frontmatter.excerpt ? (
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: post.frontmatter.excerpt
+                        }}
+                      />
+                    ) : (
+                      post.excerpt
+                    )}
+                  </p>
                 </Post>
               );
             })}
@@ -70,7 +80,10 @@ export default function Index({data = {}}) {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+    allMarkdownRemark(
+      sort: {order: DESC, fields: [fileAbsolutePath]}
+      filter: {frontmatter: {draft: {ne: true}}}
+    ) {
       edges {
         node {
           excerpt(pruneLength: 250)
@@ -79,6 +92,7 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             path
+            excerpt
           }
         }
       }
