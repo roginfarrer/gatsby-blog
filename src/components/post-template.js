@@ -5,7 +5,7 @@ import MarkdownWrapper from './markdown-wrapper';
 import styled from 'styled-components';
 
 const Article = styled.article`
-  max-width: 38em;
+  max-width: ${({theme}) => theme.pageWidth};
   margin: 0 auto;
 `;
 
@@ -14,7 +14,7 @@ const ArticleTitle = styled.h2`
   margin: 1.414em 0 0.5em;
 `;
 
-const ArticleDate = styled.span;
+// const ArticleDate = styled.span;
 
 const Template = ({data}) => {
   const {markdownRemark: post} = data;

@@ -5,7 +5,7 @@ export const globalStyle = theme => injectGlobal`
 
   html {
     font-family: ${theme.fontFamily};
-    font-size: 16px;
+    font-size: 18px;
   }
 
   body {
@@ -92,5 +92,6 @@ export const theme = {
       `;
       return acc;
     }, {})
-  }
+  },
+  pageWidth: '36rem'
 };

@@ -3,7 +3,7 @@ import {Link} from 'gatsby';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
-  max-width: 38em;
+  max-width: ${({theme}) => theme.pageWidth};
   margin: 2em auto 0;
 `;
 

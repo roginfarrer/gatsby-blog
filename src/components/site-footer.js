@@ -6,7 +6,7 @@ const Footer = styled.footer`
   border-top: 1px solid #666;
   margin: 3em auto 0;
   padding: 0.5em;
-  max-width: 38em;
+  max-width: ${({theme}) => theme.pageWidth};
 `;
 
 const TwitterLink = styled.a`
