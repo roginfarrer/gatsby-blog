@@ -1,8 +1,6 @@
 import {injectGlobal, css} from 'styled-components';
 
 export const globalStyle = theme => injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Catamaran:400,700|Vollkorn:700');
-
   html {
     font-family: ${theme.fontFamily};
     font-size: 18px;
@@ -69,8 +67,14 @@ export const theme = {
   color: {
     base: '#221924',
     lightBase: '#666',
+    lighterBase: '#999',
     primary: '#007acc',
-    red: '#d14054'
+    red: '#d14054',
+    brands: {
+      github: '#0366d6',
+      twitter: '#1da1f2',
+      linkedin: '#0074b6'
+    }
   },
   serifFallback,
   fontFamily: `"Catamaran", ${serifFallback}`,

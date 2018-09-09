@@ -5,9 +5,12 @@ import {Link} from 'gatsby';
 import AnchorButton from './base/link-button';
 
 const LinkButton = AnchorButton.withComponent(Link).extend`
+  padding: 0;
+  transition-duration: 600ms;
+  transition-delay: 100ms;
+  font-size: ${({theme}) => theme.fontSize.small};
   position: relative;
   overflow-x: hidden;
-  padding: 0;
 `;
 
 const fadeIn = keyframes`
@@ -27,14 +30,13 @@ const ReadMoreArrow = styled.svg`
   width: 15px;
   fill: currentColor;
   margin-left: 5px;
-  /* animation: ${fadeIn} 600ms ease; */
 `;
 
 const ReadMoreContent = styled.div`
-  padding: 0.5rem 1rem 0 1rem;
+  padding: 0.5em 1em 0 1em;
   text-decoration: underline;
   display: inline-block;
-  transition: transform 400ms ease;
+  transition: transform 400ms cubic-bezier(0.65, 0.05, 0.36, 1);
   overflow: hidden;
   white-space: nowrap;
   transform: ${({isActive}) =>

@@ -1,8 +1,26 @@
 @font-face {
-  font-family: 'FF Meta VF';
-  src: url('../fonts/MetaVariableDemo-Set.woff2') format('woff2-variations'),
-    url('../fonts/MetaVariableDemo-Set.woff2') format('woff2'),
-    url('../fonts/MetaVariableDemo-Set.ttf') format('ttf');
-  font-style: normal italic;
-  font-weight: 100 900;
+  font-family: 'Vollkorn';
+  src: url('../fonts/Vollkorn-Bold.woff2') format('woff2'),
+    url('../fonts/Vollkorn-Bold.woff2') format('woff'),
+    url('../fonts/Vollkorn-Bold.ttf') format('ttf');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Catamaran';
+  src: url('../fonts/catamaran-700.woff2') format('woff2'),
+    url('../fonts/catamaran-700.woff2') format('woff'),
+    url('../fonts/catamaran-700.ttf') format('ttf');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Catamaran';
+  src: url('../fonts/catamaran-regular.woff2') format('woff2'),
+    url('../fonts/catamaran-regular.woff2') format('woff'),
+    url('../fonts/catamaran-regular.ttf') format('ttf');
+  font-style: normal;
+  font-weight: normal;
 }

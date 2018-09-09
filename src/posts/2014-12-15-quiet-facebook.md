@@ -1,6 +1,7 @@
 ---
 path: '/hide-facebook-news-feed'
 title: "Hide Facebook's News Feed (And Other Annoyances)"
+date: 2014-12-15
 ---
 
 <h4 class="subhead">How to eliminate Facebook's news feed for good.</h4>

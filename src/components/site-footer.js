@@ -5,16 +5,16 @@ import {Link} from 'gatsby';
 const Footer = styled.footer`
   border-top: 1px solid #666;
   margin: 3em auto 0;
-  padding: 0.5em;
+  padding: 1em 0.5em;
   max-width: ${({theme}) => theme.pageWidth};
 `;
 
 const TwitterLink = styled.a`
-  color: #1da1f2;
+  color: ${({theme}) => theme.color.brands.twitter};
 `;
 
 const GithubLink = styled.a`
-  color: #0366d6;
+  color: ${({theme}) => theme.color.brands.github};
 `;
 
 const FooterText = styled.span`

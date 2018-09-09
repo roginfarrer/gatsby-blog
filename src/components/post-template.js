@@ -10,11 +10,17 @@ const Article = styled.article`
 `;
 
 const ArticleTitle = styled.h2`
-  font-size: ${({theme}) => theme.fontSize.roadsign};
+  font-size: ${({theme}) => theme.fontSize.large};
+  ${({theme}) => theme.media.sm`
+    font-size: ${theme.fontSize.roadsign}
+  `};
   margin: 1.414em 0 0.5em;
 `;
 
-// const ArticleDate = styled.span;
+const ArticleDate = styled.p`
+  margin: 1.5em 0;
+  text-transform: uppercase;
+`;
 
 const Template = ({data}) => {
   const {markdownRemark: post} = data;
@@ -22,6 +28,7 @@ const Template = ({data}) => {
     <Layout>
       <Article>
         <ArticleTitle>{post.frontmatter.title}</ArticleTitle>
+        <ArticleDate>{post.frontmatter.date}</ArticleDate>
         <MarkdownWrapper dangerouslySetInnerHTML={{__html: post.html}} />
       </Article>
     </Layout>

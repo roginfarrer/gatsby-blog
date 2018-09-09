@@ -1,6 +1,17 @@
 import styled from 'styled-components';
+import {hexToRgb} from '../utils';
 
 const MarkdownWrapper = styled.div`
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  blockquote,
+  li {
+    word-break: break-word;
+  }
   h3 {
     font-size: ${({theme}) => theme.fontSize.large};
   }
@@ -9,12 +20,15 @@ const MarkdownWrapper = styled.div`
   }
   h3,
   h4 {
-    line-height: 1.2em;
-    margin: 1.414em 0 0.5em;
+    line-height: 1.25;
+    margin: 1.5em 0 0.5em;
   }
 
-  p {
-    margin-bottom: 1.3em;
+  p,
+  figure,
+  ul,
+  ol {
+    margin-bottom: 1.25em;
   }
 
   h3 {
@@ -29,7 +43,6 @@ const MarkdownWrapper = styled.div`
   ul,
   ol {
     padding-left: 3em;
-    margin: 0.75em 0;
     counter-reset: listCounter;
     li {
       &::before {
@@ -59,8 +72,14 @@ const MarkdownWrapper = styled.div`
     font-weight: bold;
   }
 
+  hr {
+    margin: 3em 0;
+    border-top: ${({theme}) => `1px solid ${theme.color.lighterBase}`};
+  }
+
   blockquote {
-    color: ${({theme}) => theme.color.lightBase}
+    color: ${({theme}) => theme.color.lightBase};
+    font-size: ${({theme}) => theme.fontSize.large};
     position: relative;
     margin: 2em 0;
     &::before {
@@ -72,6 +91,15 @@ const MarkdownWrapper = styled.div`
       left: -0.75em;
       transform: matrix(1, 1, 0, -1, -8, -17);
     }
+  }
+
+  code {
+    background-color: ${({theme}) =>
+      `rgba(${hexToRgb(theme.color.primary)}, 0.1)`};
+    color: ${({theme}) => theme.color.primary};
+    font-family: 'Operator Mono', 'Dank Mono', 'Courier Prime', menlo, monospace;
+    font-weight: bold;
+    padding: 0 0.2rem;
   }
 `;
 

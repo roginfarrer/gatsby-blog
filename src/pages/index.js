@@ -2,8 +2,6 @@ import React from 'react';
 import Layout from '../components/layout';
 import {Link, graphql} from 'gatsby';
 import styled from 'styled-components';
-import {Provider as SiteHeaderProvider} from '../components/site-header';
-import {breakpoints} from '../globalStyle';
 import ReadMoreLink from '../components/read-more-link';
 
 const BlogIndex = styled.section`
@@ -18,12 +16,10 @@ const Post = styled.section`
 `;
 
 const PostFooter = styled.div`
-  ${({theme}) => theme.media.sm`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-  `};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
 `;
 
 const PostTitle = styled.h2`
@@ -33,7 +29,12 @@ const PostTitle = styled.h2`
 
 const PostTitleLink = styled(Link)`
   color: ${({theme}) => theme.color.base};
+  transition: color 200ms;
   text-decoration: none;
+  &:hover,
+  &:focus {
+    color: ${({theme}) => theme.color.primary};
+  }
 `;
 
 const PostDate = styled.p`
@@ -41,47 +42,43 @@ const PostDate = styled.p`
   margin: 0;
 `;
 
-const ReadMore = styled.div``;
-
 export default function Index({data = {}}) {
   const {edges: posts} = data.allMarkdownRemark;
   return (
-    <SiteHeaderProvider value={{isLarge: false}}>
-      <Layout>
-        <BlogIndex>
-          {posts
-            .filter(post => post.node.frontmatter.title.length > 0)
-            .map(({node: post}) => {
-              return (
-                <Post key={post.id}>
-                  <PostTitle>
-                    <PostTitleLink to={post.frontmatter.path}>
-                      {post.frontmatter.title}
-                    </PostTitleLink>
-                  </PostTitle>
-                  <p>
-                    {post.frontmatter.excerpt ? (
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: post.frontmatter.excerpt
-                        }}
-                      />
-                    ) : (
-                      post.excerpt
-                    )}
-                  </p>
-                  <PostFooter>
-                    <PostDate>Posted on {post.frontmatter.date}</PostDate>
-                    <ReadMoreLink to={post.frontmatter.path}>
-                      Continue Reading
-                    </ReadMoreLink>
-                  </PostFooter>
-                </Post>
-              );
-            })}
-        </BlogIndex>
-      </Layout>
-    </SiteHeaderProvider>
+    <Layout>
+      <BlogIndex>
+        {posts
+          .filter(post => post.node.frontmatter.title.length > 0)
+          .map(({node: post}) => {
+            return (
+              <Post key={post.id}>
+                <PostTitle>
+                  <PostTitleLink to={post.frontmatter.path}>
+                    {post.frontmatter.title}
+                  </PostTitleLink>
+                </PostTitle>
+                <p>
+                  {post.frontmatter.excerpt ? (
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: post.frontmatter.excerpt
+                      }}
+                    />
+                  ) : (
+                    post.excerpt
+                  )}
+                </p>
+                <PostFooter>
+                  <PostDate>Posted on {post.frontmatter.date}</PostDate>
+                  <ReadMoreLink to={post.frontmatter.path}>
+                    Continue Reading
+                  </ReadMoreLink>
+                </PostFooter>
+              </Post>
+            );
+          })}
+      </BlogIndex>
+    </Layout>
   );
 }
 

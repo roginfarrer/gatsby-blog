@@ -1,6 +1,12 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
+
+const colorChange = theme => keyframes`
+  0% { color: ${theme.color.red}; }
+  50% { color: ${theme.color.primary}; }
+  100% { color: ${theme.color.red}; }
+`;
 
 const HeaderContainer = styled.header`
   max-width: ${({theme}) => theme.pageWidth};
@@ -21,10 +27,7 @@ const TitleLink = styled(Link)`
   &:hover,
   &:focus {
     .SiteHeader-title {
-      color: #d14054;
-    }
-    .SiteHeader-byline {
-      color: ${({theme}) => theme.color.primary};
+      animation: ${({theme}) => `${colorChange(theme)} 1s linear infinite`};
     }
   }
 `;
@@ -33,25 +36,17 @@ const TitleByline = styled.span`
   font-weight: normal;
 `;
 
-const HeaderContext = React.createContext({isLarge: false});
-const {Consumer} = HeaderContext;
-
 const StyledHeader = ({siteTitle, author, ...props}) => (
-  <Consumer>
-    {value => (
-      <HeaderContainer>
-        <Title isLarge={value.isLarge}>
-          <TitleLink to="/">
-            <span className="SiteHeader-title">{siteTitle}</span>
-            <TitleByline className="SiteHeader-byline">
-              &nbsp;by {author}
-            </TitleByline>
-          </TitleLink>
-        </Title>
-      </HeaderContainer>
-    )}
-  </Consumer>
+  <HeaderContainer>
+    <Title>
+      <TitleLink to="/">
+        <span className="SiteHeader-title">{siteTitle}</span>
+        <TitleByline className="SiteHeader-byline">
+          &nbsp;by {author}
+        </TitleByline>
+      </TitleLink>
+    </Title>
+  </HeaderContainer>
 );
 
-export const {Provider} = HeaderContext;
 export default StyledHeader;

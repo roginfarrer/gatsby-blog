@@ -1,6 +1,6 @@
 ---
 path: '/starting-a-blog-with-jeyll'
-date: '2014-12-14T17:12:33.962Z'
+date: '2014-12-14'
 title: 'Starting A Blog with Jekyll (When You Have No Idea What You’re Doing)'
 ---
 
