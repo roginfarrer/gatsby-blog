@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from '../components/layout';
-import {Link, graphql} from 'gatsby';
+import {graphql} from 'gatsby';
 import styled, {keyframes} from 'styled-components';
-import {theme} from '../globalStyle';
+import {theme} from '../theme';
 import Img from 'gatsby-image';
 
 const avatarEnter = keyframes`
@@ -39,7 +39,7 @@ const SocialAnchor = styled.a`
   color: ${({color}) => color};
 `;
 
-const StyledSocialAnchor = ({color, ...props}) => (
+const StyledSocialAnchor = props => (
   <SocialAnchor rel="noopener noreferrer" target="_blank" {...props} />
 );
 

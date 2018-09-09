@@ -6,7 +6,8 @@ import {StaticQuery, graphql} from 'gatsby';
 import Header from './site-header';
 import Footer from './site-footer';
 import '../assets/styles/style.css';
-import {globalStyle, theme} from '../globalStyle';
+import {globalStyle} from '../globalStyle';
+import {theme} from '../theme';
 import styled, {ThemeProvider} from 'styled-components';
 
 const PageContainer = styled.div`

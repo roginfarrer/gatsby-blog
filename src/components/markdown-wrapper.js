@@ -101,6 +101,18 @@ const MarkdownWrapper = styled.div`
     font-weight: bold;
     padding: 0 0.2rem;
   }
+
+  figure {
+    margin: 0 0 1.25em;
+    text-align: center;
+    ${({theme}) => theme.media.md`
+      margin: 0 -5em 1.25em;
+    `};
+    figcaption {
+      color: ${({theme}) => theme.color.lightBase};
+      font-size: ${({theme}) => theme.fontSize.small};
+    }
+  }
 `;
 
 export default MarkdownWrapper;
