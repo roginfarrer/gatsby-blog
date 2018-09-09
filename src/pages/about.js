@@ -18,7 +18,7 @@ const avatarEnter = keyframes`
 
 const Page = styled.article`
   max-width: ${({theme}) => theme.pageWidth};
-  margin: 3em auto;
+  margin: 2em auto;
 `;
 
 const MeContainer = styled.div`
