@@ -19,7 +19,8 @@ const ArticleTitle = styled.h2`
 
 const ArticleDate = styled.p`
   margin: 1.5em 0;
-  text-transform: uppercase;
+  font-family: ${({theme}) => theme.fontFamily.serif};
+  font-variant: small-caps;
 `;
 
 const Template = ({data}) => {

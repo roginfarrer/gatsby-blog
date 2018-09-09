@@ -2,7 +2,7 @@ import {injectGlobal, css} from 'styled-components';
 
 export const globalStyle = theme => injectGlobal`
   html {
-    font-family: ${theme.fontFamily};
+    font-family: ${theme.fontFamily.sansSerif};
     font-size: 18px;
   }
 
@@ -40,6 +40,6 @@ export const globalStyle = theme => injectGlobal`
   }
 
   h2, h3, h4 {
-    font-family: 'Vollkorn';
+    font-family: ${theme.fontFamily.serif};
   }
 `;

@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "Superb Meteors by Rogin Farrer",
+  "description": "A site by Rogin Farrer",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Rogin Farrer",
   "dependencies": {
     "gatsby": "next",
     "gatsby-image": "^1.0.55",
@@ -42,6 +42,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/roginfarrer/rogin.xyz"
   }
 }

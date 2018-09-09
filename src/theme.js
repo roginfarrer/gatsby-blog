@@ -1,7 +1,9 @@
 import {css} from 'styled-components';
 
-const serifFallback = `"BlinkMacSystemFont", -apple-system, "Helvetica Neue",
+const sansSerifFallback = `"BlinkMacSystemFont", -apple-system, "Helvetica Neue",
 Helvetica, sans-serif`;
+
+const serifFallback = `"Merriweather, Georgia, serif"`;
 
 export const breakpoints = {
   xs: 450,
@@ -25,7 +27,10 @@ export const theme = {
     }
   },
   serifFallback,
-  fontFamily: `"Catamaran", ${serifFallback}`,
+  fontFamily: {
+    sansSerif: `"Catamaran", ${sansSerifFallback}`,
+    serif: `"Vollkorn", ${serifFallback}`
+  },
   fontSize: {
     small: '0.8125rem', // 13px
     body: '1rem', // 16px
